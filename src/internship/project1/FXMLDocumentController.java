@@ -59,6 +59,11 @@ public class FXMLDocumentController implements Initializable {
     {
         //Test Openner Code
         Stage stage = new Stage();
+        //Filters out for the .std files
+        fileChooser.getExtensionFilters().addAll(
+                new FileChooser.ExtensionFilter("Stl Files", "*.stl")
+        );
+                
         fileChooser.setTitle("Open Resource File");
         fileChooser.showOpenDialog(stage);
         System.out.println("File uploaded!");
