@@ -7,24 +7,22 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" prefHeight="200" prefWidth="320" xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1" fx:controller="internship.project1.FXMLDocumentController">
+<AnchorPane id="AnchorPane" prefHeight="241.0" prefWidth="343.0" xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1" fx:controller="internship.project1.FXMLDocumentController">
     <children>
-      <Pane layoutX="14.0" layoutY="9.0" prefHeight="116.0" prefWidth="304.0">
+      <Pane layoutX="5.0" layoutY="5.0" prefHeight="116.0" prefWidth="333.0">
          <children>
             <Text layoutX="40.0" layoutY="26.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Please input the following information" textAlignment="CENTER" />
-            <TextField id="stdFileTextField" fx:id="stdFileTextField" layoutX="14.0" layoutY="79.0" prefHeight="26.0" prefWidth="38.0" />
-            <TextField id="nameTextField" fx:id="nameTextField" layoutX="73.0" layoutY="80.0" prefHeight="26.0" prefWidth="38.0" />
-            <TextField id="capitalTextField" fx:id="capitalTextField" layoutX="133.0" layoutY="80.0" prefHeight="26.0" prefWidth="38.0" />
-            <TextField id="dateTextField" fx:id="dateTextField" layoutX="203.0" layoutY="80.0" prefHeight="26.0" prefWidth="94.0" />
-            <Text layoutX="13.0" layoutY="70.0" strokeType="OUTSIDE" strokeWidth="0.0" text="std.file" />
-            <Text layoutX="74.0" layoutY="69.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name" />
-            <Text layoutX="123.0" layoutY="69.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cap. Letter" />
-            <Text layoutX="228.0" layoutY="69.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date" />
+            <TextField id="nameTextField" fx:id="nameTextField" layoutX="100.0" layoutY="78.0" prefHeight="26.0" prefWidth="85.0" />
+            <TextField id="dateTextField" fx:id="dateTextField" layoutX="197.0" layoutY="78.0" prefHeight="26.0" prefWidth="93.0" />
+            <Text layoutX="123.0" layoutY="67.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name" />
+            <Text layoutX="9.0" layoutY="69.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cap. Letter" />
+            <Text layoutX="223.0" layoutY="67.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date" />
+            <TextField id="capitalTextField" fx:id="capitalTextField" layoutX="21.0" layoutY="77.0" prefHeight="26.0" prefWidth="38.0" />
          </children>
       </Pane>
-      <Pane id="buttonPane" layoutY="125.0" prefHeight="116.0" prefWidth="324.0">
+      <Pane id="buttonPane" layoutY="125.0" prefHeight="116.0" prefWidth="333.0">
          <children>
-              <Label fx:id="label" layoutX="112.0" layoutY="84.0" minHeight="16" minWidth="69" />
+              <Label fx:id="label" layoutX="128.0" layoutY="78.0" minHeight="16" minWidth="69" />
             <Button id="openButton" fx:id="openButton" layoutX="44.0" layoutY="26.0" mnemonicParsing="false" onAction="#openButtonAction" text="Open" />
             <Button id="saveButton" fx:id="saveButton" layoutX="120.0" layoutY="26.0" mnemonicParsing="false" onAction="#saveButtonAction" text="Go" />
             <Button id="closeButton" fx:id="closeButton" layoutX="200.0" layoutY="26.0" mnemonicParsing="false" onAction="#closeButtonAction" text="Close" />
