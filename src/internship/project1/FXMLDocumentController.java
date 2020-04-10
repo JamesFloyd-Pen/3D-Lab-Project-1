@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package internship.project1;
 
 import java.io.File;
@@ -21,8 +16,8 @@ import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
 /**
- *
- * @author Legop
+ * @name 3D Lab Internship Project
+ * @author James Floyd, Jared Smith
  */
 public class FXMLDocumentController implements Initializable {
     
@@ -77,7 +72,6 @@ public class FXMLDocumentController implements Initializable {
         
        // File file = fileChooser.getSelectFile();
 
-        
         dateTextField.setText(currentDate.format(localDate));
     }
     
@@ -87,7 +81,6 @@ public class FXMLDocumentController implements Initializable {
         //Runs the renameSTL X function
         //RunRename.RenameSTL();
         //Once it is saved...       
-        
         System.out.println("You clicked saved button!");
         label.setText("Your new file name is 4/1/JWheel.std");
     }
