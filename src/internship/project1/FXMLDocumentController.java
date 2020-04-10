@@ -5,6 +5,7 @@
  */
 package internship.project1;
 
+import java.io.File;
 import java.net.URL;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -65,17 +66,28 @@ public class FXMLDocumentController implements Initializable {
         );
                 
         fileChooser.setTitle("Open Resource File");
-        fileChooser.showOpenDialog(stage);
+        //fileChooser.showOpenDialog(stage);
+        File file = fileChooser.showOpenDialog(stage);
+        if(file != null)
+        {
+            System.out.println(file);
+        }
+        
         System.out.println("File uploaded!");
+        
+       // File file = fileChooser.getSelectFile();
+
+        
         dateTextField.setText(currentDate.format(localDate));
     }
     
     @FXML
     private void saveButtonAction(ActionEvent event)
     {
-        //Runs the RenameSTD X function
-        //RunRename.RenameSTD();
-        //Once it is saved...
+        //Runs the renameSTL X function
+        //RunRename.RenameSTL();
+        //Once it is saved...       
+        
         System.out.println("You clicked saved button!");
         label.setText("Your new file name is 4/1/JWheel.std");
     }
