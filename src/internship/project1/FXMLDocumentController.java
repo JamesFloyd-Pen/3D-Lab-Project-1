@@ -39,9 +39,6 @@ public class FXMLDocumentController implements Initializable {
     private Button saveButton;
     
     @FXML
-    private TextField stdFileTextField;
-    
-    @FXML
     private TextField nameTextField;
     
     @FXML
@@ -106,16 +103,6 @@ public class FXMLDocumentController implements Initializable {
         
     }
     
-    
-
-    public TextField getStdFileTextField() {
-        return stdFileTextField;
-    }
-
-    public void setStdFileTextField(TextField stdFileTextField) {
-        this.stdFileTextField = stdFileTextField;
-    }
-
     public TextField getNameTextField() {
         return nameTextField;
     }
@@ -139,6 +126,5 @@ public class FXMLDocumentController implements Initializable {
     public void setDateTextField(TextField dateTextField) {
         this.dateTextField = dateTextField;
     }
-    
     
 }
