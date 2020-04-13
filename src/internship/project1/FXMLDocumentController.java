@@ -24,6 +24,7 @@ public class FXMLDocumentController implements Initializable {
     final private DateTimeFormatter currentDate = DateTimeFormatter.ofPattern("MM/dd/yyyy");
     final private LocalDate localDate = LocalDate.now();
     public FileChooser fileChooser = new FileChooser();
+    public String oldFile, newFile, tempFile;
 
     
     @FXML
@@ -62,12 +63,11 @@ public class FXMLDocumentController implements Initializable {
         File file = fileChooser.showOpenDialog(stage);
         if(file != null)
         {
-            System.out.println(file);
+            oldFile = file.getName();
+            System.out.println(oldFile);
         }
         
         System.out.println("File uploaded!");
-        
-       // File file = fileChooser.getSelectFile();
 
         dateTextField.setText(currentDate.format(localDate));
     }
@@ -78,8 +78,9 @@ public class FXMLDocumentController implements Initializable {
         //Runs the renameSTL X function
         //RunRename.RenameSTL();
         //Once it is saved...       
+        renameFile();
         System.out.println("You clicked saved button!");
-        label.setText("Your new file name is 4/1/JWheel.std");
+        label.setText("Your new file name is " + newFile);
     }
     
     @FXML
@@ -100,7 +101,12 @@ public class FXMLDocumentController implements Initializable {
     
     public void renameFile()
     {
+        String initial = capitalTextField.getText();
+        String inputName = nameTextField.getText();
+        String date = dateTextField.getText();
         
+        newFile = inputName + initial + date + ".STL"; 
+        System.out.println(newFile);
     }
     
     public TextField getNameTextField() {
