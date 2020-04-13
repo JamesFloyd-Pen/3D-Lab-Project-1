@@ -24,8 +24,8 @@ public class FXMLDocumentController implements Initializable {
     final private DateTimeFormatter currentDate = DateTimeFormatter.ofPattern("MM/dd/yyyy");
     final private LocalDate localDate = LocalDate.now();
     public FileChooser fileChooser = new FileChooser();
-    public String oldFile, newFile, tempFile;
-
+    public String oldFile, newFile;
+    File file, tempFile;
     
     @FXML
     private Label label;
@@ -60,15 +60,14 @@ public class FXMLDocumentController implements Initializable {
                 
         fileChooser.setTitle("Open Resource File");
         //fileChooser.showOpenDialog(stage);
-        File file = fileChooser.showOpenDialog(stage);
+        file = fileChooser.showOpenDialog(stage);
         if(file != null)
         {
             oldFile = file.getName();
-            System.out.println(oldFile);
+            System.out.println(file);
+            System.out.println(oldFile + " uploaded!");
         }
         
-        System.out.println("File uploaded!");
-
         dateTextField.setText(currentDate.format(localDate));
     }
     
@@ -107,6 +106,10 @@ public class FXMLDocumentController implements Initializable {
         
         newFile = inputName + initial + date + ".STL"; 
         System.out.println(newFile);
+        
+       //test directory 
+        tempFile = new File("F:\\Flpoly Spring 2020\\Internship\\"+newFile);
+    
     }
     
     public TextField getNameTextField() {
