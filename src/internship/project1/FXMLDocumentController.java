@@ -51,15 +51,12 @@ public class FXMLDocumentController implements Initializable {
     @FXML
     private void openButtonAction(ActionEvent event)
     {
-        //Test Openner Code
         Stage stage = new Stage();
-        //Filters out for the .std files
         fileChooser.getExtensionFilters().addAll(
                 new FileChooser.ExtensionFilter("Stl Files", "*.stl")
         );
                 
         fileChooser.setTitle("Open Resource File");
-        //fileChooser.showOpenDialog(stage);
         file = fileChooser.showOpenDialog(stage);
         if(file != null)
         {
@@ -74,9 +71,7 @@ public class FXMLDocumentController implements Initializable {
     @FXML
     private void saveButtonAction(ActionEvent event)
     {
-        //Runs the renameSTL X function
-        //RunRename.RenameSTL();
-        //Once it is saved...       
+
         renameFile();
         System.out.println("You clicked saved button!");
         label.setText("Your new file name is " + newFile);
@@ -90,7 +85,6 @@ public class FXMLDocumentController implements Initializable {
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
         assert dateTextField != null : "fx:id=\"dateTextField\" was not injected: check your FXML file 'FXMLDocument.fxml'.";
         assert label != null : "fx:id=\"label\" was not injected: check your FXML file 'FXMLDocument.fxml'.";
         assert openButton != null : "fx:id=\"openButton\" was not injected: check your FXML file 'FXMLDocument.fxml'.";
@@ -108,14 +102,11 @@ public class FXMLDocumentController implements Initializable {
         System.out.println(newFile);
         
        //test directory 
-       // "F:\\Flpoly Spring 2020\\Internship\\"
+       //"F:\\Flpoly Spring 2020\\Internship\\"
         tempFile = new File(oldFile + '\\' + newFile);
         System.out.println(tempFile);
         
         overwriteName();
-    
-        //replace  the oldFile name to the new one
-        // file.renameTo(tempFile);   
     }
     
     public void overwriteName()
