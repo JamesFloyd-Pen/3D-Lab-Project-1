@@ -21,7 +21,7 @@ import javafx.stage.Stage;
  */
 public class FXMLDocumentController implements Initializable {
     
-    final private DateTimeFormatter currentDate = DateTimeFormatter.ofPattern("MM/dd/yyyy");
+    final private DateTimeFormatter currentDate = DateTimeFormatter.ofPattern("MM_dd_yyyy");
     final private LocalDate localDate = LocalDate.now();
     public FileChooser fileChooser = new FileChooser();
     public String oldFile, newFile;
@@ -63,9 +63,9 @@ public class FXMLDocumentController implements Initializable {
         file = fileChooser.showOpenDialog(stage);
         if(file != null)
         {
-            oldFile = file.getName();
+            oldFile = file.getAbsoluteFile().getParent();
             System.out.println(file);
-            System.out.println(oldFile + " uploaded!");
+            System.out.println(file.getName() + " from " + oldFile + " was uploaded!");
         }
         
         dateTextField.setText(currentDate.format(localDate));
@@ -108,8 +108,26 @@ public class FXMLDocumentController implements Initializable {
         System.out.println(newFile);
         
        //test directory 
-        tempFile = new File("F:\\Flpoly Spring 2020\\Internship\\"+newFile);
+       // "F:\\Flpoly Spring 2020\\Internship\\"
+        tempFile = new File(oldFile + '\\' + newFile);
+        System.out.println(tempFile);
+        
+        overwriteName();
     
+        //replace  the oldFile name to the new one
+        // file.renameTo(tempFile);   
+    }
+    
+    public void overwriteName()
+    {
+       try
+       {
+           file.renameTo(tempFile);
+           System.out.println("It worked!");
+       }catch(Exception e)
+       {
+           System.out.println("ERROR");
+       }
     }
     
     public TextField getNameTextField() {
